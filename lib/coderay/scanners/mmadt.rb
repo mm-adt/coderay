@@ -1,34 +1,20 @@
 module CodeRay
 module Scanners
   
-  # Scanner for the mmadt.
+  # Scanner for the mmlang.
   class Mmadt < Scanner
     
     register_for :mmadt
     file_extension 'pas'
     
     KEYWORDS = [
-      'and', 'array', 'as', 'at', 'asm', 'at', 'begin', 'case', 'class',
-      'const', 'constructor', 'destructor', 'dispinterface', 'div', 'do',
-      'downto', 'else', 'end', 'except', 'exports', 'file', 'finalization',
-      'finally', 'for', 'function', 'goto', 'if', 'implementation', 'in',
-      'inherited', 'initialization', 'inline', 'interface', 'is', 'label',
-      'library', 'mod', 'nil', 'not', 'object', 'of', 'or', 'out', 'packed',
-      'procedure', 'program', 'property', 'raise', 'record', 'repeat',
-      'resourcestring', 'set', 'shl', 'shr', 'string', 'then', 'threadvar',
-      'to', 'try', 'type', 'unit', 'until', 'uses', 'var', 'while', 'with',
-      'xor', 'on', 'mmlang'
+      'a','add','and','as','branch','choose','count','error','eq','explain',
+      'get','id','is','lt','lte','gt','gte','fold','plus','map','mult','neg',
+      'one','groupCount','or','put','to','from','start','model','q','zero'
     ]  # :nodoc:
     
     DIRECTIVES = [
-      'absolute', 'abstract', 'assembler', 'at', 'automated', 'cdecl',
-      'contains', 'deprecated', 'dispid', 'dynamic', 'export',
-      'external', 'far', 'forward', 'implements', 'local', 
-      'near', 'nodefault', 'on', 'overload', 'override',
-      'package', 'pascal', 'platform', 'private', 'protected', 'public',
-      'published', 'read', 'readonly', 'register', 'reintroduce',
-      'requires', 'resident', 'safecall', 'stdcall', 'stored', 'varargs',
-      'virtual', 'write', 'writeonly',
+      'mmlang'
     ]  # :nodoc:
     
     IDENT_KIND = WordList::CaseIgnoring.new(:ident).
