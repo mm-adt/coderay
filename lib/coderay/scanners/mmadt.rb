@@ -14,7 +14,7 @@ module Scanners
     ]  # :nodoc:
     
     DIRECTIVES = [
-      'mmlang'
+      'int','bool','str','real','rec','inst'
     ]  # :nodoc:
     
     IDENT_KIND = WordList::CaseIgnoring.new(:ident).
@@ -47,7 +47,7 @@ module Scanners
             encoder.text_token match, :comment
             next
             
-          elsif match = scan(/ <[>=]? | >=? | :=? | [-+=*\/;,@\^|\(\)\[\]] | \.\. /x)
+          elsif match = scan(/ \* | \+ | <= | >= | =< | > | < | [-+=*\/;,@\^|\(\)\[\]] | \.\. /x)
             encoder.text_token match, :operator
           
           elsif match = scan(/\./)
